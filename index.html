@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La gran pregunta ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ================= BODY ================= */
+body{
+  font-family:'Playfair Display', serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+
+  background:
+  radial-gradient(circle at 20% 20%, #ffe5ec, transparent 40%),
+  radial-gradient(circle at 80% 80%, #ffd6e7, transparent 40%),
+  linear-gradient(135deg,#fff0f6,#ffd6e7);
+
+  overflow:hidden;
+}
+
+/* ================= ESQUINAS ================= */
+.corner-left{
+  position:fixed;
+  top:18px;
+  left:22px;
+  font-family:'Great Vibes';
+  font-size: clamp(28px,5vw,55px);
+  color:#e11d48;
+}
+
+.corner-right{
+  position:fixed;
+  top:22px;
+  right:22px;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#9b0035;
+}
+
+/* ================= CARD ================= */
+.card{
+  background:white;
+  width:100%;
+  max-width:900px;
+  padding: clamp(28px,5vw,70px);
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 40px 90px rgba(0,0,0,.18);
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* ================= TEXTOS ================= */
+.text{
+  font-size: clamp(15px,3.5vw,20px);
+  line-height:1.9;
+  color:#5a002a;
+}
+
+.title{
+  font-family:'Great Vibes';
+  font-size: clamp(38px,8vw,72px);
+  color:#d4145a;
+  margin-top:30px;
+}
+
+/* ================= BOTONES ================= */
+.buttons{
+  margin-top:50px;
+}
+
+.btn{
+  padding:16px 34px;
+  border-radius:40px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:16px;
+  border:none;
+  transition:.25s;
+}
+
+.yes{
+  background:#e11d48;
+  color:white;
+}
+
+.yes:hover{
+  transform:scale(1.12);
+}
+
+/* ================= NO BOTÓN ================= */
+.no{
+  background:white;
+  color:#e11d48;
+  border:2px dashed #e11d48;
+  position:fixed;
+  z-index:999;
+  animation:glow 1.6s infinite;
+}
+
+@keyframes glow{
+  50%{ box-shadow:0 0 20px #ff4d88; }
+}
+
+/* ================= BURBUJAS (ARREGLADAS) ================= */
+.bubble{
+  position:fixed;
+  background:#ff4d6d;
+  color:white;
+  padding:10px 16px;
+  border-radius:20px;
+  font-size:14px;
+  font-family:'Poppins';
+
+  max-width:260px;
+  white-space:normal;
+  word-wrap:break-word;
+  text-align:center;
+
+  animation:fade 3s ease forwards;
+  pointer-events:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+@keyframes fade{
+  0%{opacity:0; transform:scale(.7) translateY(10px)}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{opacity:0; transform:scale(.9) translateY(-10px)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="corner-left">J ♡ E</div>
+<div class="corner-right">SOLO PARA ESTEFANY</div>
+
+<div class="card">
+
+  <div class="text">
+    Después de cada recuerdo contigo…  
+    cada risa, cada abrazo, cada instante compartido…  
+    entendí que mi lugar favorito es a tu lado.
+    <br><br>
+
+    Desde entonces supe que no quiero soltarte nunca,
+    porque contigo todo se siente hogar.
+    <br><br>
+
+    (Si ves un botón que dice <b>“No”</b>… cuidado…
+    se pone nervioso y huye cuando intentas tocarlo 🤭)
+  </div>
+
+  <div class="title">
+    ¿Quieres pasar conmigo el San Valentín?
+  </div>
+
+  <div class="buttons">
+    <button class="btn yes" onclick="yes()">
+      💖 Sí, quiero contigo siempre
+    </button>
+  </div>
+
+</div>
+
+<button class="btn no" id="noBtn">No 😢</button>
+
+<script>
+
+/* ===== REDIRECCIÓN ===== */
+function yes(){
+  window.location.href="confirmado.html";
+}
+
+/* ===== BOTÓN NO ===== */
+const noBtn = document.getElementById("noBtn");
+
+const frases = [
+  "Nunca me atraparás… si quieres inténtalo 😏",
+  "Casi… pero no 😜",
+  "Mmm… te estás acercando demasiado 😳",
+    "¿Ese dedito quiere tocarme o besarme? 💋",
+     "No te hagas… sé que quieres el Sí 😉",
+  "Si me sigues persiguiendo te robo un beso 😈",
+  "Ven… acércate… no muerdo (bueno… tal vez poquito 😏)",
+  "Tus labios dicen que sí aunque tu dedo diga no 😘",
+  "Deja de resistirte… te quiero pegadita a mí 💕",
+  "Presiona el rosado… te prometo mimos infinitos 😌",
+  "Tu corazón ya dijo que sí ❤️",
+  "No te hagas la difícil 😉",
+  "Presiona el rosado… te conviene 😘",
+  "Si sigues persiguiéndome te robo un beso 💋",
+  "Vamos… sé que quieres conmigo 😈",
+  "Te estás tardando demasiado en decir que sí 😌"
+];
+
+let index = 0;
+
+mover();
+
+/* ===== MOVER ALEATORIO ===== */
+function mover(){
+  const x = Math.random() * (window.innerWidth - 140);
+  const y = Math.random() * (window.innerHeight - 80);
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top  = y + "px";
+}
+
+/* ===== BURBUJA ===== */
+function bubble(text){
+  const b = document.createElement("div");
+  b.className = "bubble";
+  b.innerText = text;
+
+  b.style.left = (noBtn.offsetLeft + 10) + "px";
+  b.style.top  = (noBtn.offsetTop - 50) + "px";
+
+  document.body.appendChild(b);
+
+  setTimeout(()=>b.remove(),3000);
+}
+
+/* ===== EVENTO ===== */
+function escapar(e){
+  e.preventDefault();
+
+  if(index >= frases.length){
+    bubble("nunca aceptaré un no… bye bye 😘");
+
+    noBtn.style.transition="0.15s";
+    noBtn.style.opacity="0";
+    noBtn.style.transform="scale(0)";
+    noBtn.style.pointerEvents="none";
+    return;
+  }
+
+  bubble(frases[index]);
+  index++;
+
+  mover();
+}
+
+noBtn.addEventListener("mouseenter", escapar);
+noBtn.addEventListener("click", escapar);
+
+</script>
+
+</body>
+</html>
