@@ -1,0 +1,92 @@
+body{
+  margin:0;
+  font-family:'Poppins';
+  background:#ffe6ec;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* revista */
+.magazine{
+  width:95%;
+  max-width:800px;
+  height:95%;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.2);
+  overflow:hidden;
+  position:relative;
+}
+
+/* paginas */
+.page{
+  position:absolute;
+  inset:0;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  transform:translateX(100%);
+  opacity:0;
+  transition:.6s;
+}
+
+.page.active{
+  transform:translateX(0);
+  opacity:1;
+}
+
+.title{
+  font-family:'Playfair Display';
+  font-size:2.5rem;
+  color:#d4145a;
+}
+
+.script{
+  font-family:'Dancing Script';
+  font-size:2rem;
+}
+
+.big{
+  font-size:3rem;
+}
+
+button{
+  margin:10px;
+  padding:10px 25px;
+  border:none;
+  border-radius:20px;
+  background:#ff4e8a;
+  color:white;
+  cursor:pointer;
+}
+
+.grid div{
+  margin:8px;
+}
+
+.envelope{
+  font-size:50px;
+  cursor:pointer;
+}
+
+.final{
+  background:#ff4e4e;
+  color:white;
+}
+
+/* corazones */
+.hearts span{
+  position:absolute;
+  bottom:-20px;
+  animation:rise 6s linear infinite;
+}
+@keyframes rise{
+  to{transform:translateY(-120vh);opacity:0}
+}

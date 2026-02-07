@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Confirmado ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ================= BODY ================= */
+body{
+  font-family:'Playfair Display', serif;
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:20px;
+
+  background:
+  radial-gradient(circle at 20% 20%, #ff9aa2, transparent 40%),
+  radial-gradient(circle at 80% 80%, #ff6b81, transparent 40%),
+  linear-gradient(135deg,#ff4d6d,#ff758f);
+
+  overflow-x:hidden;
+}
+
+/* ================= ESQUINAS ================= */
+.corner-left{
+  position:fixed;
+  top:15px;
+  left:18px;
+  font-family:'Great Vibes';
+  font-size:32px;
+  color:white;
+}
+
+.corner-right{
+  position:fixed;
+  top:18px;
+  right:18px;
+  font-size:10px;
+  letter-spacing:2px;
+  color:white;
+}
+
+/* ================= CARD ================= */
+.card{
+  background:white;
+  width:100%;
+  max-width:900px;
+  border-radius:26px;
+  padding:40px 28px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:fadeUp .9s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* ================= TITULOS ================= */
+.title{
+  font-family:'Great Vibes';
+  font-size: clamp(38px, 7vw, 70px);
+  color:#e11d48;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  font-size: clamp(18px, 3.5vw, 24px);
+  color:#6b0033;
+  margin-bottom:20px;
+}
+
+/* ================= CORAZÓN ================= */
+.heart{
+  font-size: clamp(50px, 8vw, 90px);
+  animation:beat 1.4s infinite;
+  margin-bottom:20px;
+}
+
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+}
+
+/* ================= FOTOS RESPONSIVE ================= */
+.photos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin:20px 0 25px;
+}
+
+.photo{
+  width: min(40vw, 180px);
+  height:auto; /* mantiene proporciones */
+  background:white;
+  padding:6px;
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,0,0,.3);
+  animation:float 4s ease-in-out infinite;
+  transition:.4s;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.photo img{
+  width:100%;
+  height:auto;
+  object-fit:contain; /* la foto se ve completa */
+  border-radius:12px;
+  display:block;
+}
+
+.left{ transform:rotate(-6deg); }
+.right{ transform:rotate(6deg); }
+.extra-left{ transform:rotate(-3deg); }
+.extra-right{ transform:rotate(3deg); }
+
+.photo:hover{
+  transform:scale(1.1) rotate(0);
+}
+
+@keyframes float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-10px); }
+}
+
+/* ================= MENSAJE ================= */
+.message{
+  font-size: clamp(15px, 3.5vw, 20px);
+  line-height:1.9;
+  color:#5a002a;
+  max-width:700px;
+  margin:auto;
+}
+
+/* ================= BOTON ================= */
+.btn{
+  margin-top:28px;
+  padding:12px 28px;
+  border:none;
+  border-radius:40px;
+  background:#e11d48;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* ================= CORAZONES ================= */
+.floating{
+  position:fixed;
+  color:white;
+  animation:fall linear infinite;
+  opacity:.7;
+}
+
+@keyframes fall{
+  from{transform:translateY(-10vh)}
+  to{transform:translateY(110vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="corner-left">J ♡ E</div>
+<div class="corner-right">SOLO PARA ESTEFANY</div>
+
+<div class="card">
+
+  <div class="title">Confirmado oficialmente</div>
+  <div class="heart">❤️</div>
+  <div class="subtitle">Eres mi San Valentín</div>
+
+  <div class="photos">
+    <div class="photo left"><img src="foto5.jpg" alt="Foto 5"></div>
+    <div class="photo right"><img src="foto6.jpg" alt="Foto 6"></div>
+    <div class="photo extra-left"><img src="foto7.jpg" alt="Foto 7"></div>
+    <div class="photo extra-right"><img src="foto8.jpg" alt="Foto 8"></div>
+  </div>
+
+  <div class="message">
+    Gracias por decir que sí.<br><br>
+    Dos meses contigo y ya eres mi lugar favorito,
+    mi calma y mi hogar.<br><br>
+    Prometo mejorar cada día,
+    cuidarte, apoyarte y amarte infinitamente.<br><br>
+    Lo nuestro no es casualidad…  
+    es destino ❤️
+  </div>
+
+  <button class="btn" onclick="location.href='index.html'">
+    te espero el 14 en mi cuarto 😊😊
+  </button>
+
+</div>
+
+<!-- 🎵 música -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2023/03/07/audio_4f8b7a6e7e.mp3">
+</audio>
+
+<script>
+/* lluvia de corazones */
+for(let i=0;i<30;i++){
+  const h=document.createElement("div");
+  h.className="floating";
+  h.innerHTML="❤";
+
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(4+Math.random()*6)+"s";
+  h.style.fontSize=(12+Math.random()*18)+"px";
+
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Estefany ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   FONDO ROMÁNTICO
+========================= */
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Poppins;
+  overflow:hidden;
+
+  background:
+  radial-gradient(circle at 20% 20%, #ffe5ec, transparent 40%),
+  radial-gradient(circle at 80% 80%, #ffd6e0, transparent 40%),
+  linear-gradient(135deg,#ffd6e0,#ffc2d1,#ffb3c6);
+}
+
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
+.heart-float{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 6s linear infinite;
+  opacity:.6;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0);opacity:0}
+  50%{opacity:.8}
+  100%{transform:translateY(-110vh);opacity:0}
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+.envelope{
+  width:380px;
+  height:240px;
+  background:#ffb3c6;
+  border-radius:18px;
+  position:relative;
+  cursor:pointer;
+  box-shadow:0 30px 70px rgba(0,0,0,.3);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  animation:loveMove 3.5s ease-in-out infinite;
+}
+
+/* animación curiosa bonita */
+@keyframes loveMove{
+  0%{transform:translateY(0) rotate(0) scale(1)}
+  25%{transform:translateY(-16px) rotate(2deg) scale(1.05)}
+  50%{transform:translateY(0) rotate(-2deg) scale(1.03)}
+  75%{transform:translateY(-10px) rotate(1deg) scale(1.04)}
+  100%{transform:translateY(0) rotate(0) scale(1)}
+}
+
+
+/* tapa */
+.flap{
+  position:absolute;
+  width:100%;
+  height:130px;
+  background:#ff8fab;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:1.1s;
+  z-index:4;
+}
+
+
+/* corazón central */
+.heart{
+  font-size:52px;
+  animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.25)}
+}
+
+
+/* texto frontal */
+.label{
+  position:absolute;
+  bottom:18px;
+  font-family:'Playfair Display';
+  font-size:20px;
+  color:#7b0033;
+  text-align:center;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+.letter{
+  position:absolute;
+  width:92%;
+  height:88%;
+  background:white;
+  border-radius:18px;
+  padding:35px;
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  left:50%;
+  transform:translateX(-50%);
+  top:120%;
+  opacity:0;
+
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+  transition:1.2s;
+}
+
+.open .flap{
+  transform:rotateX(180deg);
+}
+
+.open .letter{
+  top:6%;
+  opacity:1;
+}
+
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+.script{
+  font-family:'Dancing Script';
+  font-size:40px;
+  color:#d4145a;
+  margin-bottom:18px;
+}
+
+.text{
+  font-size:15px;
+  line-height:1.7;
+  color:#444;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+.btn{
+  margin-top:25px;
+  padding:13px 32px;
+  border:none;
+  border-radius:28px;
+  background:linear-gradient(45deg,#ff4d6d,#ff758f);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+<!-- 🎵 MUSICA -->
+<audio id="bgMusic" autoplay loop></audio>
+
+<!-- 🔊 sonido abrir -->
+<audio id="openSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c1bb9e4d5e.mp3"></audio>
+
+
+
+<div class="envelope" id="env">
+
+  <div class="flap"></div>
+
+  <div class="heart">❤️</div>
+
+  <div class="label">
+    Para el amor de mi vida, Estefany 💌
+  </div>
+
+
+  <!-- CARTA -->
+  <div class="letter">
+
+    <div class="script"></div>
+
+    <div class="text">
+      <br><br>
+  
+   
+
+   Desde que llegaste, algo en mí cambió sin avisar…
+tu sonrisa se volvió mi lugar favorito.
+
+Y hoy quise prepararte algo pequeño,
+hecho con mi tiempo, mi cariño
+y todo lo que siento por ti. <br>
+
+Ábrelo despacito… esta sorpresa es solo para ti ❤️
+
+
+    <button class="btn" onclick="goNext()">
+      Siguiente →
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   ABRIR SOBRE
+========================= */
+const env=document.getElementById("env");
+const sound=document.getElementById("openSound");
+
+env.addEventListener("click",()=>{
+  env.classList.add("open");
+  sound.play();
+});
+
+
+/* =========================
+   SIGUIENTE
+========================= */
+function goNext(){
+  window.location.href="valentine.html";
+}
+
+
+/* =========================
+   MUSICA AUTOMATICA
+========================= */
+const songs=[
+"https://www.bensound.com/bensound-music/bensound-love.mp3",
+"https://www.bensound.com/bensound-music/bensound-romantic.mp3"
+];
+
+const audio=document.getElementById("bgMusic");
+
+let index=localStorage.getItem("songIndex")||0;
+
+audio.src=songs[index];
+audio.volume=0.5;
+
+audio.onended=()=>{
+ index=(parseInt(index)+1)%songs.length;
+ localStorage.setItem("songIndex",index);
+ audio.src=songs[index];
+ audio.play();
+};
+
+audio.play();
+
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart-float";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(15+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),6000);
+},600);
+
+</script>
+
+</body>
+</html>
